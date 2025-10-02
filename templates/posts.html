@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Posts
+{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+<div class="timeline">
+    {% regroup posts by created_date.year as year_list %}
+    {% for year in year_list %}
+        <div class="year">{{ year.grouper }}</div>
+
+        {% regroup year.list by created_date|date:"F" as month_list %}
+        {% for month in month_list %}
+            <div class="month">{{ month.grouper }}</div>
+
+            {% for post in month.list %}
+                <a href="{% url "post_detail" post.id %}">
+                    <div class="post-card"
+                         {% if post.contents.first.image %}
+                         style="--bg-image: url('{{ post.contents.first.image.url }}');"
+                         {% endif %}>
+                        <div class="overlay"></div>
+                        <div class="post-header">
+                            <h2 class="post-title">{{ post.title }}</h2>
+                            <span class="post-date">{{ post.created_date|date:"d M, Y" }}</span>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+
+        {% endfor %}
+    {% endfor %}
+</div>
+{% endblock content %}

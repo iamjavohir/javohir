@@ -1,0 +1,65 @@
+body{
+    padding-top: 80px
+}
+.nav-link {
+    color: gray !important;
+    font-size: 20px;
+}
+
+.nav-link:hover {
+    color: black !important;
+}
+
+.custom-nav {
+    margin-top: 10px;
+    margin-right: 50px;
+}
+
+.brand {
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+    margin-left: 50px;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.brand:hover {
+    text-decoration: none;
+    color: #333;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.icon svg {
+    transition: transform 0.3s ease;
+}
+
+.icon:hover svg {
+    transform: scale(1.1); /* hover qilinganda biroz kattalashadi */
+}
+
+.icon-text {
+    position: absolute;
+    bottom: -30px; /* icon tagidan chiqadi */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    font-size: 16px;
+    color: #333;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+.icon:hover .icon-text {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
