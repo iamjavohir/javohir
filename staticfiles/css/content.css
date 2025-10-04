@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #222;
+    background: #fafafa
+}
+
+.post-title {
+    text-align: center;
+    font-size: 40px;
+    margin: 34px 0 8px;
+    font-weight: 800;
+    color: #111
+}
+
+.post-date {
+    text-align: center;
+    color: #6b6f76;
+    margin: 0 0 26px;
+    font-size: 20px;
+    font-weight: 500
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0 16px;
+    width: 100%
+}
+
+.text-block {
+    width: 70%;
+    max-width: 980px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #2b2f33;
+    text-align: justify
+}
+
+.text-block p {
+    margin: 0 0 14px
+}
+
+.image-block {
+    width: 70%;
+    max-width: 980px
+}
+
+.image-block img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain
+}
+
+.text-block blockquote {
+    margin: 0;
+    padding: 16px 20px;
+    border-left: 4px solid rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.03);
+    color: #444;
+    font-size: 18px;
+    line-height: 1.6
+}
+
+.text-block h1, .text-block h2, .text-block h3 {
+    margin: 18px 0;
+    font-weight: 700;
+    color: #111
+}
+
+.text-block h2 {
+    font-size: 28px
+}
+
+.text-block strong {
+    font-weight: 700
+}
+
+.text-block em {
+    font-style: italic;
+    color: #333
+}
+
+@media (max-width: 900px) {
+    .text-block, .image-block {
+        width: 90%
+    }
+
+    .text-block {
+        font-size: 16px
+    }
+
+    .post-title {
+        font-size: 28px
+    }
+
+    .post-date {
+        font-size: 16px
+    }
+}

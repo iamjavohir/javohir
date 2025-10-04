@@ -1,16 +1,15 @@
 import os
 from pathlib import Path
 import dj_database_url
-from dotenv import load_dotenv  # 🔹 BU juda muhim
+from dotenv import load_dotenv
 
-# .env faylni yuklash
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key")
 DEBUG = os.getenv("DEBUG", "False") == "True"
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+ALLOWED_HOSTS = ['javohir-4fpm.onrender.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
